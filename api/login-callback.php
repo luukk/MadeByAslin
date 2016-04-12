@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/facebook-sdk-v5/autoload.php';
+require_once __DIR__ . '/includes/facebook-sdk-v5/autoload.php';
 session_start();
 
 
@@ -14,7 +14,7 @@ $helper = $fb->getRedirectLoginHelper();
 try {
 
   $accessToken = $helper->getAccessToken();
-  $response = $fb->get('/me?locale=en_US&fields=name,email,gender,location',$accessToken);
+  $response = $fb->get('/me?locale=en_US&fields=name,email,gender,location,birthday',$accessToken);
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
   echo 'Graph returned an error: ' . $e->getMessage();
   exit;
@@ -23,30 +23,9 @@ try {
   exit;
 }
 
-if (isset($accessToken)) {
-  $_SESSION['facebook_access_token'] = (string) $accessToken;
-  echo "succes!<br>";
-}
 $user = $response->getGraphUser();
-var_dump($user);
-var_dump(
-    $user->getField('location'), $user['location']
-);
-echo '<br>Name: ' . $user['name'];
-//echo "<img src=".$user['picture']['url']." /> ";
-
+$birthday = json_decode(json_encode($user['birthday']),TRUE);
+$fbirth = date('d.m.Y',strtotime($birthday['date']));
+$fname = $user['name'];
+header("Location: http://localhost/bewijzenmap/jaar2/periode3/madebyaslin/index.php?name=".$fname."&email=".$femail."&age=".$fbirth);
  ?>
- <!--
- $fb = new Facebook\Facebook([
-  'app_id' => '{app-id}',
-  'app_secret' => '{app-secret}',
-  'default_graph_version' => 'v2.4',
-]);
-
-$fb->setDefaultAccessToken($_SESSION['facebook_access_token']);
-$response = $fb->get('/me?locale=en_US&fields=name,email');
-$userNode = $response->getGraphUser();
-var_dump(
-    $userNode->getField('email'), $userNode['email']
-);
--->

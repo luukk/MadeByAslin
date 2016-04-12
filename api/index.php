@@ -2,7 +2,7 @@
 
   #index.php
 
-  require_once __DIR__ . '/facebook-sdk-v5/autoload.php';
+  require_once __DIR__ . '/includes/facebook-sdk-v5/autoload.php';
 
   session_start();
 
@@ -14,7 +14,5 @@
   ]);
 
   $helper = $fb->getRedirectLoginHelper();
-  $permissions = ['email', 'user_likes','user_location'];
+  $permissions = ['email', 'user_likes','user_location,user_birthday'];
   $loginUrl = $helper->getLoginUrl('http://localhost/bewijzenmap/jaar2/periode3/madebyaslin/api/login-callback.php', $permissions);
-
-  echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
