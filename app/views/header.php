@@ -16,13 +16,13 @@
       <ul class="nav navbar-nav navbar-right">
         <?php
         for ($i=0; $i <count($a); $i++) {
-          echo $i;
           if($i < 3 ){
             echo '<li><a href="#">'. $a[$i].'</a></li>';
           }
         }
           ?>
         <li><a href="<?php echo $actual_link; echo '&lan=en'; ?>"><img src="app/img/content/engeland.png" width="20" height="20" alt="Taal Engels"/></a></li>
+        <li><a href="<?php echo $actual_link; echo '&lan=nl'; ?>"><img src="app/img/content/nederland.png" width="20" height="20" alt="Taal Engels"/></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -36,7 +36,7 @@
     <div class="container">
         <div class="row bannercenter">
             <div class="col-md-12">
-              <h1>Aardbeving Nepal</h1>
+              <h1><?php echo $a[3]; ?></h1>
            </div>
         </div>
         <div class="row rowworld">
@@ -50,13 +50,13 @@
         </div>
         <div class="row mobileaantal">
           <?php
-            for ($i=3; $i < count($a); $i++) {
-              if($i < 5 ){
+            for ($i=4; $i < count($a); $i++) {
+              if($i < 6 ){
                 echo '<div class="col-md-2 col-sm-2">
                     <div class="aantal">
                       <h3>'.$a[$i].'</h3>
                     </div>';
-                if($i == 4){
+                if($i == 5){
                   echo '<h3 id="gewonden"></h3></div>';
                 }else{
                   echo '<h3 id="doden"></h3></div>';
@@ -68,13 +68,13 @@
               <a href="#"><img src="app/img/content/doneer.png" width="300" height="94" class="img-responsive" id="doneer" alt="Doneer Knop"/></a>
             </div>
             <?php
-              for ($i=5; $i < count($a); $i++) {
-                if($i < 7 ){
+              for ($i=6; $i < count($a); $i++) {
+                if($i < 8 ){
                   echo '<div class="col-md-2 col-sm-2">
                       <div class="aantal">
                         <h3>'.$a[$i].'</h3>
                       </div>';
-                  if($i == 6){
+                  if($i == 7){
                     echo '<h3 id="dakloos"></h3></div>';
                   }else{
                     echo '<h3 id="alleen"></h3></div>';
