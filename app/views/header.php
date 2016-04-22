@@ -17,7 +17,7 @@
         <?php
         for ($i=0; $i <count($a); $i++) {
           if($i < 3 ){
-            echo '<li><a href="#">'. $a[$i].'</a></li>';
+            echo '<li><a class="scroll" target="'.strtolower(str_replace(' ','-',$a[$i])).'">'. $a[$i].'</a></li>';
           }
         }
           ?>
@@ -32,7 +32,7 @@
 <?php
 
  ?>
-<div class="banner">
+<div class="banner rampgebied disaster-area">
     <div class="container">
         <div class="row bannercenter">
             <div class="col-md-12">
@@ -52,37 +52,44 @@
           <?php
             for ($i=4; $i < count($a); $i++) {
               if($i < 6 ){
-                echo '<div class="col-md-2 col-sm-2">
-                    <div class="aantal">
-                      <h3>'.$a[$i].'</h3>
-                    </div>';
+                echo '<div class="col-md-2 col-sm-2">';
                 if($i == 5){
-                  echo '<h3 id="gewonden"></h3></div>';
+                  echo '<h3 id="gewonden">0</h3>';
                 }else{
-                  echo '<h3 id="doden"></h3></div>';
+                  echo '<h3 id="doden">0</h3>';
                 }
+              echo '<div class="aantal">
+                  <h3>'.$a[$i].'</h3></div>
+                </div>';
               }
             }
           ?>
-            <div class="col-md-4 col-sm-4">
-              <a href="#"><img src="app/img/content/doneer.png" width="300" height="94" class="img-responsive" id="doneer" alt="Doneer Knop"/></a>
+            <div class="col-md-4 col-sm-4 doneerholder">
+              <a href="https://www.gofundme.com/aslinzeeman?utm_medium=wdgt">
+                <figure>
+                    <img src="app/img/content/doneer.png" width="300" height="94" class="img-responsive" id="doneer" alt="Doneer Knop"/>
+                    <figcaption>
+                      <div id="puls-donate-button"><div id="puls-donate-ring"></div></div>
+                    </figcaption>
+                </figure>
+              </a>
+
             </div>
             <?php
               for ($i=6; $i < count($a); $i++) {
                 if($i < 8 ){
-                  echo '<div class="col-md-2 col-sm-2">
-                      <div class="aantal">
-                        <h3>'.$a[$i].'</h3>
-                      </div>';
+                  echo '<div class="col-md-2 col-sm-2">';
                   if($i == 7){
-                    echo '<h3 id="dakloos"></h3></div>';
+                    echo '<h3 id="dakloos">0</h3>';
                   }else{
-                    echo '<h3 id="alleen"></h3></div>';
+                    echo '<h3 id="alleen">0</h3>';
                   }
+                echo '<div class="aantal">
+                      <h3>'.$a[$i].'</h3>
+                    </div></div>';
                 }
               }
             ?>
         </div>
     </div>
 </div>
-<div class="test" height="200"></div>

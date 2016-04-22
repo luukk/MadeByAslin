@@ -25,7 +25,7 @@ try {
 
 $user = $response->getGraphUser();
 $birthday = json_decode(json_encode($user['birthday']),TRUE);
-$fbirth = date('d.m.Y',strtotime($birthday['date']));
+$fbirth = date('Y',strtotime($birthday['date']));
 $fname = $user['name'];
 header("Location: http://localhost/bewijzenmap/jaar2/periode3/madebyaslin/index.php?name=".$fname."&email=".$femail."&age=".$fbirth);
  ?>

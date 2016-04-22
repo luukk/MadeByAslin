@@ -22,7 +22,10 @@ h1 {
     color: #c0392b;
 	font-family:"Montserrat";
 }
-
+.mobileaantal h3{
+	margin-bottom: 6px;
+	margin-top: 0px;
+}
 .navbar {
 	background-color: #10161d;
 	margin-bottom:0;
@@ -41,7 +44,12 @@ h1 {
 	background-image:url(content/logosmall.png);
 	background-repeat:no-repeat;
 }
-
+.nav li a{
+	cursor: pointer;
+}
+.nav li a:active{
+	text-decoration: underline;
+}
 .banner {
 	padding-top:35px;
 	background-color: #10161d;
@@ -50,33 +58,23 @@ h1 {
 	height: calc(100vh);
 }
 
-#doneer {
-	margin:0 auto;
-	display:block;
-	margin-top:15px;
-}
-
-#doneer:hover {
-	text-align:center;
-	opacity:0.5;
-	margin:0 auto;
-	display:block;
-	margin-top:15px;
-}
-
-.banner h3 {
+.banner .aantal {
 	text-align:center;
 	margin:0;
 	padding:0;
 	color:white;
-	font-size:2em !important;
+	font-size:1.2em;
 	font-family:	"Montserrat";
 }
-
-.aantal {
-	margin-top:20px;
+.banner .aantal h3{
+	font-size: 1.2em;
 }
-
+#doden,#gewonden,#alleen,#dakloos{
+	color: #c0392b;
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: bold;
+}
 .wereldkaart {
 	display:none;
 }
@@ -88,13 +86,61 @@ h1 {
 #wereldkaartmiddel {
 		display:none;
 	}
+.doneerholder{
+	text-align: center;
+}
+.doneerholder figure{
+	display: inline-block;
+	 position: relative;
+	 margin: 0;
+}
+.doneerholder figcaption{
+  position: absolute;
+	left: 20%;
+	top:19%;
+}
+
+.doneer figcaption{
+	position: absolute;
+	left:75px !important;
+	top: 16px !important;
+}
+.doneer figcaption #puls-donate-button{
+	height: 46px;
+	width: 46px;
+}
+
+#puls-donate-button{
+	border-radius: 30px;
+	height: 50px;
+	width: 50px;
+	background-color: white;
+	position: absolute;
+}
+#puls-donate-ring {
+	border: 20px solid rgba(255,255,255, 0.8);
+	-webkit-border-radius: 40px;
+	height: 70px;
+	width: 70px;
+	position: absolute;
+	left: -10px;
+	top: -10px;
+	-webkit-animation: pulsate 1.5s ease-out;
+	-webkit-animation-iteration-count: infinite;
+	opacity: 0.0;
+}
 
 @media screen and (min-width: 768px) {
 
 .mobileaantal {
 	margin-top:0px;
 }
-
+#doden,#gewonden,#alleen,#dakloos{
+	color: #c0392b;
+	text-align: center;
+	font-size: 1.6em !important;
+	font-weight: bold;
+}
 .wereldkaart {
 	display:inherit;
 }
@@ -130,7 +176,7 @@ h1 {
 	padding: 0 80px;
 }
 
-.banner h3 {
+.banner .aantal {
 	text-align:center;
 	margin:0;
 	padding:0;
@@ -153,21 +199,6 @@ h1 {
 	width:100%;
 	height: calc(100vh);
 }
-
-#doneer {
-	margin:0 auto;
-	display:block;
-	margin-top:0;
-}
-
-#doneer:hover {
-	text-align:center;
-	opacity:0.5;
-	margin:0 auto;
-	display:block;
-	margin-top:0;
-}
-
 #wereldkaartmiddel {
 		display:none;
 	}
@@ -180,7 +211,10 @@ h1 {
 		height: calc(90vh - 94px - 69px - 75px);
 	}
 }
-
+.doneerholder{
+	position: relative;
+	height: 132px;
+}
 @media screen and (min-width: 1100px)  and (max-height: 800px) {
 	#wereldkaartgroot {
 		display:none;
@@ -200,13 +234,38 @@ h1 {
 }
 
 @media screen and (min-width: 1200px) {
-	.banner h3 {
+	.banner .aantal {
 	text-align:center;
 	margin:0;
 	padding:0;
 	color:white;
-	font-size:2em !important;
+	font-size:1.4em;
 	font-family:	"Montserrat";
+	}
+	#doden,#gewonden,#alleen,#dakloos{
+		color: #c0392b;
+		text-align: center;
+		font-size: 2.5em !important;
+		font-weight: bold;
+	}
+	.doneerholder{
+		position: relative;
+		height: 132px;
+	}
+	.banner .aantal h3{
+		font-size: 1.4em;
+	}
+}
+@media(min-width:768px) and (max-width:992px){
+	.doneerholder #puls-donate-button{
+		width: 36px !important;
+		height: 36px !important;
+	}
+	.doneerholder #puls-donate-ring{
+		height: 60px;
+		width: 60px;
+		left: -13px;
+		top: -11px;
 	}
 }
 
@@ -214,4 +273,158 @@ h1 {
 	#wereldkaartgroot {
 		display:inherit;
 	}
+
+}
+
+
+.blackshit {
+height:50px;
+background-color:black;
+border-radius: 25px;
+width:100%;
+}
+
+.euro{
+line-height: 50px;
+padding-left: 1em;
+}
+
+span{
+color:white;
+word-spacing: 30px;
+line-height: 50px;
+padding-right: 10px;
+font-family: 'Montserrat', sans-serif;
+}
+
+.thefooter {
+background-color: #10161d;
+width:100%;
+padding-bottom:1em;
+}
+
+.white {
+background-color:white;
+padding-bottom:5em;
+}
+
+.doneer {
+margin-top:-61px;
+}
+
+.thefooter ul {
+text-decoration:none;
+padding:0;
+color:white;
+font-family:'Montserrat', sans-serif;
+}
+
+.thefooter h3 {
+color:white;
+font-family:'Montserrat', sans-serif;
+}
+
+.thefooter .white h3 {
+color:black;
+font-family:'Montserrat', sans-serif;
+}
+
+.fa {
+float:left;
+padding-right:1em;
+}
+
+.thefooter .col-md-8 p {
+font-size:2em;
+color:white;
+}
+
+.nepalees {
+display:none;
+margin-top: 2em;
+}
+
+.thefooter {
+	background-color: #10161d;
+	width: 100%;
+	padding-bottom: 1em;
+}
+
+.sitemap {
+display:none;
+}
+footer{
+	background-color: #10161d;
+	height: calc(100vh - 347px);
+	color: white;
+}
+@media screen and (min-width: 768px) {
+.doneer {
+margin-top:-40px;
+}
+footer{
+	height: calc(100vh - 690px);
+}
+.sitemap {
+display:inherit;
+}
+
+.nepalees {
+display:inherit;
+}
+
+.thefooter .col-md-8 p {
+font-size:2em;
+color:white;
+display:inherit;
+}
+
+.mobileaantal {
+margin-top:0px;
+}
+
+.wereldkaart {
+display:inherit;
+}
+
+.navbar {
+height:75px;
+background-color: #10161d;
+padding: 0 80px;
+}
+.jumbotron{
+    background:url("../img/content/header_aanpak.png") no-repeat top center fixed;
+    background-size: cover;
+		height: calc(100vh - 611px)
+}
+}
+@media screen and (min-width: 769px) and (max-width: 1200px){
+	footer{
+		height: calc(100vh - 455px);
+	}
+}
+@media screen and (min-width: 1200px) {
+	footer{
+		height: calc(90vh - 470px);
+		min-height: 200px
+	}
+	.jumbotron{
+			height: calc(100vh - 486px)
+	}
+}
+.jumbotron{
+		background:url("../img/content/header_aanpak.png") no-repeat top center fixed;
+		background-size: cover;
+}
+
+#aanpak{
+    background-color:#10161D;
+    color:#fff;
+    font-family: 'Montserrat', sans-serif;
+		padding-bottom: 20px;
+}
+.active{
+	color: #c0392b !important;
+	text-decoration: underline;
+
 }

@@ -10,21 +10,12 @@ if(isset($_GET['name']) || isset($_GET['email']) || isset($_GET['age'])){
   $name = $_GET['name'];
   $age = $_GET['age'];
   $email = $_GET['email'];
-  //echo 'ingelogt!';
-}else{
-  $email = '';
-  $age = '';
-  $name = '';
-  header('Location:'.$loginUrl);
-//  echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
-}
 
-
- ?>
-
-<?php
   include 'app/views/header.php';
- ?>
+  include 'app/views/middleSection.php';
+  include 'app/views/footer.php';
 
-</body>
-</html>
+}else{
+  echo 'log in met facebook om deze pagina te kunnen bekijken';
+  header('Location:'.$loginUrl);
+}

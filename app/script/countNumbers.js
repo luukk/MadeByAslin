@@ -10,12 +10,12 @@ window.onload = function(e){
     setInterval(function(){
       if (offset > count) {
         count = count +interval;
-        id.innerHTML = count;
+        id.innerHTML = Math.floor(count);
       }
     },50);
   }
-  countNumbers(doden,80000);
-  countNumbers(gewond,160000);
-  countNumbers(dakloos,46000);
-  countNumbers(alleen,960000);
+  countNumbers(doden,8000);
+  countNumbers(gewond,21000);
+  countNumbers(dakloos,1000);
+  countNumbers(alleen,2);
 }
